@@ -26,7 +26,7 @@ for ml in m_list:
     m_id= ml.find('td', {'class': 'titleColumn'}).find('a')['href']
     movie_link_list.append(m_id)
 
-#top pop 100 movie range(0,100)
+#top 100 movie range(0,100)
 for i in movie_link_list[:100]:
     m = 'https://www.imdb.com'+i+'reviews?ref_=tt_urv' 
     h = requests.get(m, verify=False) 
@@ -38,14 +38,15 @@ for i in movie_link_list[:100]:
         user_id= ml.find('a')['href'].strip('/user')
         user_id_list.append(user_id)
         
-    #user comment
-    for user in user_id_list[:4]:
+    #user list
+    for user in user_id_list[:4]:#from each top 100 movie comment page, select top 4 active comment users
         user_link = 'https://www.imdb.com/user/ur' + user +'/reviews'
         print(user_link)
         html = requests.get(user_link, verify=False)
         bs = BeautifulSoup(html.text, 'lxml')
         comment_list = bs.find_all('div', {'class': 'lister-item-content'})
-        for cl in comment_list[:5]:
+        #comment list
+        for cl in comment_list[:5]:#acquire 5 movie comment data from each 4 users
             #movie name
             movie_name = cl.find('div', {'class': 'lister-item-header'}).find('a').get_text()
             movie_name_list.append(movie_name)
@@ -63,7 +64,7 @@ for i in movie_link_list[:100]:
 
 
 output=pd.DataFrame({'user id':uid_list,'movie name':movie_name_list,'movie id':movie_id_list, 'user rate':user_rate_list})
-output.to_csv('C:\\Users\\SingSing\\Documents\\output66.csv')
+output.to_csv('C:\\Users\\SingSing\\Documents\\output16.csv')
 print('File Output Success')
 
 
