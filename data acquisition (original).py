@@ -64,7 +64,7 @@ for i in movie_link_list[:100]:
 
 
 output=pd.DataFrame({'user id':uid_list,'movie name':movie_name_list,'movie id':movie_id_list, 'user rate':user_rate_list})
-output.to_csv('C:\\Users\\SingSing\\Documents\\output16.csv')
+output.to_csv('C:\\Users\\SingSing\\Documents\\original data.csv')
 print('File Output Success')
 
 

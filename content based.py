@@ -7,7 +7,7 @@ from sklearn.feature_extraction.text import TfidfTransformer
 
 pd.set_option('display.max_columns',3)
 # dfread = pd.read_excel('imbd1.xlsx', header=None)
-dfread = pd.read_excel('content base data.xlsx', header=None)
+dfread = pd.read_excel('content based data.xlsx', header=None)
 df = dfread.copy()
 
 # df.columns = ['Rank', 'Id', 'Name', 'Year', 'Plot']
@@ -76,7 +76,7 @@ def findmost10simmilar(wordlist, type2, df):
     method = int(input('input your data pre-processing method: 0 (default) for raw freqency, 1 for tf-idf : '))
     count = CountVectorizer()
     count_matrix = count.fit_transform(df['Key_words'])
-
+    
     if method == 1:
         # tf-idf
         tfidf_transformer = TfidfTransformer()
