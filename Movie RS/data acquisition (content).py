@@ -6,7 +6,7 @@ from time import sleep
 import pandas as pd
 import math
 
-data = pd.read_csv('user&item base data.csv',usecols=['movie'])
+data = pd.read_csv('processed data.csv',usecols=['movie id'])
 df1 = data.iloc[:,0].tolist()
 
 arr = []
@@ -75,5 +75,5 @@ if __name__ == "__main__":
     for i in range(len(res)):
         for j in range(len(res[i])):
             sheet.cell(row=i + 1, column=j + 1).value = res[i][j]
-    wb.save('content based data.xlsx')
+    wb.save('data.xlsx')
 
