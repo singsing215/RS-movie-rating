@@ -1,7 +1,7 @@
 ﻿# Movie Recommender System
  
 ## Motivation 
-Crawl data from IMBD pop movies, apply data to 3 recommender algorithms, find something interesting based on the outputs.
+Based on IMBD top100 movie data, these data are applied to the three recommendation system algorithms we developed: content-base RS, item-base CF, user-base CF, to deepen the understanding of the recommendation system algorithm, and compare the advantages and disadvantages of the three algorithms.
 
 
 ## Data 
