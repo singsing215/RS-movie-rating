@@ -50,9 +50,10 @@ df.drop(columns=['Plot'], inplace=True)
 # print(type(cosine_sim[-1].tolist()))
 print(df.head())
 # print(df[df['Name']=='The Shawshank Redemption'])
-print(df[df['Name']==df.iloc[1]['Name']])
-print(type(df.iloc[1]['Name']))
-print(df.iloc[2]['Name'])
+
+#print(df[df['Name']==df.iloc[1]['Name']])
+#print(type(df.iloc[1]['Name']))
+#print(df.iloc[2]['Name'])
 
 
 def findmost10simmilar(wordlist, type2, df):
